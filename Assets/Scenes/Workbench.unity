@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311947, g: 0.38074005, b: 0.35872722, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -150,6 +150,10 @@ Prefab:
     - target: {fileID: 4973790914490542, guid: 6621f71212ca48240b8adbbe3f3e704b, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134298738511594, guid: 6621f71212ca48240b8adbbe3f3e704b, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6621f71212ca48240b8adbbe3f3e704b, type: 2}
@@ -285,6 +289,27 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d29fe6d5546251846974c7a301af6511, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1725913315 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1833019810916638, guid: d29fe6d5546251846974c7a301af6511,
+    type: 2}
+  m_PrefabInternal: {fileID: 1177279633}
+--- !u!114 &1725913317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1725913315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7f10003a1780fa4e8078a23bf2b19bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TilePrefabs:
+  - {fileID: 1134298738511594, guid: 6621f71212ca48240b8adbbe3f3e704b, type: 2}
+  TileWidth: 10
+  GameSpaceWidth: 20
+  TileSpeed: 5
 --- !u!1001 &1969812261
 Prefab:
   m_ObjectHideFlags: 0
