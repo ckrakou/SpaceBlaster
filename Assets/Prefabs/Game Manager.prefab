@@ -38,6 +38,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4377105732410846}
+  - component: {fileID: 114459331085794408}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -121,6 +122,22 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1442401515888974}
   m_Enabled: 1
+--- !u!114 &114459331085794408
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1833019810916638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7f10003a1780fa4e8078a23bf2b19bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TilePrefabs:
+  - {fileID: 1134298738511594, guid: 6621f71212ca48240b8adbbe3f3e704b, type: 2}
+  TileWidth: 10
+  GameSpaceWidth: 20
+  TileSpeed: 5
 --- !u!124 &124135030529235680
 Behaviour:
   m_ObjectHideFlags: 1
