@@ -10,6 +10,8 @@ public class PlayerControl : MonoBehaviour {
     public Transform BulletSpawnPoint;
     public GameObject BulletPrefab;
 
+    private bool shotFired = false;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -18,9 +20,14 @@ public class PlayerControl : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         UpdatePosition();
-        if (Input.GetAxis(ShootButton) > 0)
+        if (Input.GetAxis(ShootButton) > 0 && !shotFired)
         {
             FireLaser();
+        }
+
+        if (Input.GetAxis(ShootButton) <= 0)
+        {
+            shotFired = false;
         }
 	}
 
@@ -40,5 +47,6 @@ public class PlayerControl : MonoBehaviour {
         }
 
         Instantiate(BulletPrefab, BulletSpawnPoint.position ,transform.rotation );
+        shotFired = true;
     }
 }
