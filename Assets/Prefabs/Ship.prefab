@@ -137,8 +137,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Debugging: 1
+  inputMode: 1
   MovementSpeed: 10
   ShootButton: Shoot
   BulletSpawnPoint: {fileID: 4411376414890226}
   BulletPrefab: {fileID: 1848105344457422, guid: 83a9982909fbbad4ea75b727c68d0b39,
     type: 2}
+  ObservedMiddleValue: 0.3

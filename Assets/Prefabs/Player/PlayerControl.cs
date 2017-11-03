@@ -75,8 +75,29 @@ public class PlayerControl : MonoBehaviour {
 
     private void ReadKeyboard()
     {
-        horizontalReading = Input.GetAxis("Horizontal");
-        verticalReading = Input.GetAxis("Vertical");
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
+            verticalReading = 1;
+        } else if (Input.GetKey(KeyCode.DownArrow))
+        {
+            verticalReading = -1;
+        }
+        else
+        {
+            verticalReading = 0;
+        }
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            horizontalReading = 1;
+        }
+        else if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            horizontalReading = -1;
+        }
+        else
+        {
+            horizontalReading = 0;
+        }
     }
 
     private void FireLaser()
