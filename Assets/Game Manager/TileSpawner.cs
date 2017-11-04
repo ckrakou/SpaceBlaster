@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class TileSpawner : MonoBehaviour {
 
-    public GameObject[] TilePrefabs;
+    public GameObject TilePrefab;
     public float TileWidth = 10;
     public float GameSpaceWidth = 20;
     public float TileSpeed = 5;
 
-    private Random random;
     private Vector3 spawnPoint;
     private float spawnRate;
     private float nextSpawnTimeStamp;
@@ -17,7 +16,6 @@ public class TileSpawner : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        random = new Random();
         spawnPoint = new Vector3((GameSpaceWidth / 2) + (TileWidth / 2), 0, 0);
         nextSpawnTimeStamp = Time.time;
         spawnInterval = TileWidth / TileSpeed;
@@ -27,8 +25,7 @@ public class TileSpawner : MonoBehaviour {
 	void Update () {
 		if (Time.time > nextSpawnTimeStamp)
         {
-            int index = Random.Range(0, TilePrefabs.Length - 1);
-            Instantiate(TilePrefabs[index], spawnPoint, Quaternion.identity);
+            Instantiate(TilePrefab, spawnPoint, Quaternion.identity);
             nextSpawnTimeStamp = Time.time + spawnInterval;
         }
 	}

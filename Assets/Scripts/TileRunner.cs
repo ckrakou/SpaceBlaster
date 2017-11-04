@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class TileRunner : MonoBehaviour {
 
-    public GameObject[] TilePrefabs;
     public float Speed = 5;
     public float DistanceToTravel = 20;
     public Vector3 Direction;
