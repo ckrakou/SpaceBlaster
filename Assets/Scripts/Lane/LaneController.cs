@@ -11,26 +11,16 @@ public class LaneController : MonoBehaviour
     public GameObject RightTile;
     public GameObject BlockerPrefab;
     public GameObject FencePrefab;
-    public Transform[] ObstacleRows;
+    public Transform ObstacleSpot;
 
-    private List<Transform> obstacleSpots;
 
     // Use this for initialization
     void Start()
     {
-        obstacleSpots = new List<Transform>();
-        foreach (var row in ObstacleRows)
-        {
-            foreach (var spot in row.GetComponentsInChildren<Transform>())
-            {
-                if (ObstacleRows.Contains(spot) == false)
-                {
-                    obstacleSpots.Add(spot);
-                }
-            }
-        }
         if (Debugging)
-            Debug.Log("LaneController: Added " + obstacleSpots.Count);
+        {
+            Instantiate(BlockerPrefab, ObstacleSpot.position, this.transform.rotation, this.transform);
+        }
     }
 
     // Update is called once per frame

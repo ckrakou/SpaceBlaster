@@ -5,28 +5,31 @@ using UnityEngine;
 public class TileSpawner : MonoBehaviour {
 
     public GameObject TilePrefab;
-    public float TileWidth = 10;
-    public float GameSpaceWidth = 20;
+    public float TileLength = 10;
     public float TileSpeed = 5;
+    public Vector3 SpawnPoint;
+    public Vector3 KillPoint;
 
-    private Vector3 spawnPoint;
     private float spawnRate;
     private float nextSpawnTimeStamp;
     private float spawnInterval;
+    private float distanceToTravel;
 
 	// Use this for initialization
 	void Start () {
-        spawnPoint = new Vector3((GameSpaceWidth / 2) + (TileWidth / 2), 0, 0);
         nextSpawnTimeStamp = Time.time;
-        spawnInterval = TileWidth / TileSpeed;
+        spawnInterval = TileLength / TileSpeed;
+        distanceToTravel = Vector3.Distance(SpawnPoint, KillPoint);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (Time.time > nextSpawnTimeStamp)
+		if (Time.time >= nextSpawnTimeStamp)
         {
-            Instantiate(TilePrefab, spawnPoint, Quaternion.identity);
-            nextSpawnTimeStamp = Time.time + spawnInterval;
+            nextSpawnTimeStamp = Time.time + spawnInterval - Time.deltaTime;
+            TileRunner tile = Instantiate(TilePrefab, SpawnPoint, Quaternion.identity,this.transform).GetComponent<TileRunner>();
+            tile.Speed = TileSpeed;
+            tile.DistanceToTravel = distanceToTravel;
         }
-	}
+    }
 }

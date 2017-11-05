@@ -4325,8 +4325,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 339e97e44f8773d41bf4a8d29ee3b40a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 5
-  DistanceToTravel: 20
+  Speed: 20
+  DistanceToTravel: 124
   Direction: {x: 0, y: 0, z: -1}
 --- !u!114 &114470795854729710
 MonoBehaviour:
