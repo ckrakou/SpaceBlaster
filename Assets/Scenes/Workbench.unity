@@ -151,6 +151,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1830967559326104, guid: e29d2044f61f15b44944d98d2b0a85fb, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e29d2044f61f15b44944d98d2b0a85fb, type: 2}
   m_IsPrefabParent: 0
@@ -285,6 +289,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 15, y: 0, z: 0}
+--- !u!114 &966235195 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114352215883675020, guid: efd90298a97b68f4bab664eb17f079d4,
+    type: 2}
+  m_PrefabInternal: {fileID: 2046091832}
+  m_Script: {fileID: 11500000, guid: ce720e4b429817242890375fef849214, type: 3}
 --- !u!1001 &1799663028
 Prefab:
   m_ObjectHideFlags: 0
@@ -324,6 +334,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114192702174077718, guid: 69e12bf0db057364e8424e4a66c3db26,
+        type: 2}
+      propertyPath: InitialLane
+      value: 
+      objectReference: {fileID: 966235195}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 69e12bf0db057364e8424e4a66c3db26, type: 2}
   m_IsPrefabParent: 0

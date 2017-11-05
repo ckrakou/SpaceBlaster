@@ -109,8 +109,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Debugging: 0
   inputMode: 0
-  MovementSpeed: 10
-  ShootButton: fire1
+  ShootButton: Shoot
   BulletSpawnPoint: {fileID: 0}
   BulletPrefab: {fileID: 0}
   ObservedMiddleValue: 0.3
+  InitialLane: {fileID: 0}

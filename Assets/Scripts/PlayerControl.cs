@@ -12,14 +12,14 @@ public class PlayerControl : MonoBehaviour
     public Transform BulletSpawnPoint;
     public GameObject BulletPrefab;
     public float ObservedMiddleValue = 0.3f;
-    public Transform InitialPosition;
+    public LaneController InitialLane;
 
     private bool shotFired = false;
     private float horizontalOffset;
 
-    private Vector3 currentPosition;
+    private LaneController currentLane;
     private float horizontalReading;
-    private Move nextMove;
+    private Move nextMove = Move.Center;
 
     // Use this for initialization
     void Start()
@@ -32,10 +32,11 @@ public class PlayerControl : MonoBehaviour
                 Debug.Log("Horizontal Offset: " + horizontalOffset);
             }
         }
-
-        currentPosition = InitialPosition.position;
-        transform.position = currentPosition;
+        currentLane = InitialLane;
+        MovePlayer();
     }
+
+    
 
     // Update is called once per frame
     void Update()
@@ -56,7 +57,26 @@ public class PlayerControl : MonoBehaviour
     {
         ReadInput();
         DetermineNextPosition();
-        transform.position = currentPosition;
+        MovePlayer();
+    }
+
+    private void MovePlayer()
+    {
+        transform.position = currentLane.PlayerPosition.position;
+        transform.rotation = currentLane.PlayerPosition.rotation;
+        switch (nextMove)
+        {
+            case Move.Left:
+                currentLane.transform.root.Rotate(Vector3.forward, -40);
+                break;
+            case Move.Right:
+                currentLane.transform.root.Rotate(Vector3.forward, 40);
+                break;
+            case Move.Center:
+            default:
+                break;
+        }
+        // TODO: fancy rotation
     }
 
     private void DetermineNextPosition()
@@ -64,11 +84,12 @@ public class PlayerControl : MonoBehaviour
         switch (nextMove)
         {
             case Move.Left:
+                currentLane = currentLane.LeftTile.GetComponent<LaneController>();
                 break;
             case Move.Right:
+                currentLane = currentLane.RightTile.GetComponent<LaneController>();
                 break;
             case Move.Center:
-                break;
             default:
                 break;
         }
@@ -105,11 +126,11 @@ public class PlayerControl : MonoBehaviour
 
     private void ReadKeyboard()
     {
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             horizontalReading = 1;
         }
-        else if (Input.GetKey(KeyCode.LeftArrow))
+        else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             horizontalReading = -1;
         }
