@@ -3,39 +3,43 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerControl : MonoBehaviour {
+public class PlayerControl : MonoBehaviour
+{
 
     public bool Debugging = false;
     public InputMode inputMode = InputMode.Keyboard;
-    public float MovementSpeed = 10;
     public string ShootButton = "fire1";
     public Transform BulletSpawnPoint;
     public GameObject BulletPrefab;
     public float ObservedMiddleValue = 0.3f;
+    public Transform InitialPosition;
 
     private bool shotFired = false;
     private float horizontalOffset;
-    private float verticalOffset;
 
+    private Vector3 currentPosition;
     private float horizontalReading;
-    private float verticalReading;
+    private Move nextMove;
 
-	// Use this for initialization
-	void Start () {
-		if (inputMode == InputMode.Joystick)
+    // Use this for initialization
+    void Start()
+    {
+        if (inputMode == InputMode.Joystick)
         {
-            verticalOffset = Input.GetAxis("Vertical");
             horizontalOffset = Input.GetAxis("Horizontal");
             if (Debugging)
             {
-                Debug.Log("Vertical Offset: " + verticalOffset);
                 Debug.Log("Horizontal Offset: " + horizontalOffset);
             }
         }
-	}
-	
-	// Update is called once per frame
-	void Update () {
+
+        currentPosition = InitialPosition.position;
+        transform.position = currentPosition;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
         UpdatePosition();
         if (Input.GetAxis(ShootButton) > 0 && !shotFired)
         {
@@ -46,15 +50,28 @@ public class PlayerControl : MonoBehaviour {
         {
             shotFired = false;
         }
-	}
+    }
 
     private void UpdatePosition()
     {
         ReadInput();
-        Vector3 NextPosition = transform.position;
-        NextPosition.x += horizontalReading * MovementSpeed * Time.deltaTime;
-        NextPosition.z += verticalReading * MovementSpeed * Time.deltaTime;
-        transform.position = NextPosition;
+        DetermineNextPosition();
+        transform.position = currentPosition;
+    }
+
+    private void DetermineNextPosition()
+    {
+        switch (nextMove)
+        {
+            case Move.Left:
+                break;
+            case Move.Right:
+                break;
+            case Move.Center:
+                break;
+            default:
+                break;
+        }
     }
 
     private void ReadInput()
@@ -71,21 +88,23 @@ public class PlayerControl : MonoBehaviour {
                 ReadJoystick();
                 break;
         }
+
+        if (horizontalReading == 0)
+        {
+            nextMove = Move.Center;
+        }
+        else if (horizontalReading == 1)
+        {
+            nextMove = Move.Right;
+        }
+        else if (horizontalReading == -1)
+        {
+            nextMove = Move.Left;
+        }
     }
 
     private void ReadKeyboard()
     {
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            verticalReading = 1;
-        } else if (Input.GetKey(KeyCode.DownArrow))
-        {
-            verticalReading = -1;
-        }
-        else
-        {
-            verticalReading = 0;
-        }
         if (Input.GetKey(KeyCode.RightArrow))
         {
             horizontalReading = 1;
@@ -97,6 +116,7 @@ public class PlayerControl : MonoBehaviour {
         else
         {
             horizontalReading = 0;
+
         }
     }
 
@@ -107,14 +127,13 @@ public class PlayerControl : MonoBehaviour {
             Debug.Log("Firing Laser!");
         }
 
-        Instantiate(BulletPrefab, BulletSpawnPoint.position ,transform.rotation );
+        Instantiate(BulletPrefab, BulletSpawnPoint.position, transform.rotation);
         shotFired = true;
     }
 
     private void ReadJoystick()
     {
         float horizontal = Input.GetAxis("Horizontal") - horizontalOffset;
-        float vertical = Input.GetAxis("Vertical") - verticalOffset;
 
         if (horizontal == 0)
         {
@@ -129,30 +148,20 @@ public class PlayerControl : MonoBehaviour {
             horizontalReading = -1;
         }
 
-        if (vertical == 0)
-        {
-            verticalReading = -0;
-        }
-        else if (vertical > ObservedMiddleValue)
-        {
-            verticalReading = 1;
-        }
-        else
-        {
-            verticalReading = -1;
-        }
-       
-
         if (Debugging)
         {
             Debug.Log("Horizontal Input: " + horizontal + " - " + horizontalReading);
-            Debug.Log("Vertical Input: " + vertical + " - " + verticalReading);
         }
     }
 
     public enum InputMode
     {
         Keyboard, Joystick
+    }
+
+    private enum Move
+    {
+        Left, Center, Right
     }
 
 }

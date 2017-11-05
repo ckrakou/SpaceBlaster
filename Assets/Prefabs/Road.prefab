@@ -1367,11 +1367,7 @@ MonoBehaviour:
   Debugging: 0
   LeftTile: {fileID: 1128506318347290}
   RightTile: {fileID: 1068332666880240}
-  BlockerPrefab: {fileID: 1458006233022448, guid: 44764aaa17c12cd4bb4a30968b874be3,
-    type: 2}
-  FencePrefab: {fileID: 1477919673491254, guid: 1cb6421fb4fa55d4dbe4a9c57fd756ff,
-    type: 2}
-  ObstacleSpot: {fileID: 0}
+  PlayerPosition: {fileID: 4156991837414046}
 --- !u!114 &114072355837582310
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1386,11 +1382,7 @@ MonoBehaviour:
   Debugging: 0
   LeftTile: {fileID: 1289079950778810}
   RightTile: {fileID: 1872323578690034}
-  BlockerPrefab: {fileID: 1458006233022448, guid: 44764aaa17c12cd4bb4a30968b874be3,
-    type: 2}
-  FencePrefab: {fileID: 1477919673491254, guid: 1cb6421fb4fa55d4dbe4a9c57fd756ff,
-    type: 2}
-  ObstacleSpot: {fileID: 0}
+  PlayerPosition: {fileID: 4960184049600144}
 --- !u!114 &114178543188280248
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1405,11 +1397,7 @@ MonoBehaviour:
   Debugging: 0
   LeftTile: {fileID: 1068332666880240}
   RightTile: {fileID: 1086137897023534}
-  BlockerPrefab: {fileID: 1458006233022448, guid: 44764aaa17c12cd4bb4a30968b874be3,
-    type: 2}
-  FencePrefab: {fileID: 1477919673491254, guid: 1cb6421fb4fa55d4dbe4a9c57fd756ff,
-    type: 2}
-  ObstacleSpot: {fileID: 0}
+  PlayerPosition: {fileID: 4914671723231282}
 --- !u!114 &114237171225109560
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1424,11 +1412,7 @@ MonoBehaviour:
   Debugging: 0
   LeftTile: {fileID: 1533646950702114}
   RightTile: {fileID: 1772608215862992}
-  BlockerPrefab: {fileID: 1458006233022448, guid: 44764aaa17c12cd4bb4a30968b874be3,
-    type: 2}
-  FencePrefab: {fileID: 1477919673491254, guid: 1cb6421fb4fa55d4dbe4a9c57fd756ff,
-    type: 2}
-  ObstacleSpot: {fileID: 0}
+  PlayerPosition: {fileID: 4775724560796500}
 --- !u!114 &114349987857282520
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1443,11 +1427,7 @@ MonoBehaviour:
   Debugging: 0
   LeftTile: {fileID: 1086137897023534}
   RightTile: {fileID: 1533646950702114}
-  BlockerPrefab: {fileID: 1458006233022448, guid: 44764aaa17c12cd4bb4a30968b874be3,
-    type: 2}
-  FencePrefab: {fileID: 1477919673491254, guid: 1cb6421fb4fa55d4dbe4a9c57fd756ff,
-    type: 2}
-  ObstacleSpot: {fileID: 0}
+  PlayerPosition: {fileID: 4066110147458678}
 --- !u!114 &114352215883675020
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1462,11 +1442,7 @@ MonoBehaviour:
   Debugging: 0
   LeftTile: {fileID: 1772608215862992}
   RightTile: {fileID: 1289079950778810}
-  BlockerPrefab: {fileID: 1458006233022448, guid: 44764aaa17c12cd4bb4a30968b874be3,
-    type: 2}
-  FencePrefab: {fileID: 1477919673491254, guid: 1cb6421fb4fa55d4dbe4a9c57fd756ff,
-    type: 2}
-  ObstacleSpot: {fileID: 0}
+  PlayerPosition: {fileID: 4349112700592846}
 --- !u!114 &114594774184771870
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1481,11 +1457,7 @@ MonoBehaviour:
   Debugging: 0
   LeftTile: {fileID: 1513701734956264}
   RightTile: {fileID: 1255294459030044}
-  BlockerPrefab: {fileID: 1458006233022448, guid: 44764aaa17c12cd4bb4a30968b874be3,
-    type: 2}
-  FencePrefab: {fileID: 1477919673491254, guid: 1cb6421fb4fa55d4dbe4a9c57fd756ff,
-    type: 2}
-  ObstacleSpot: {fileID: 0}
+  PlayerPosition: {fileID: 4087621480767758}
 --- !u!114 &114750316833226486
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1500,11 +1472,7 @@ MonoBehaviour:
   Debugging: 0
   LeftTile: {fileID: 1255294459030044}
   RightTile: {fileID: 1128506318347290}
-  BlockerPrefab: {fileID: 1458006233022448, guid: 44764aaa17c12cd4bb4a30968b874be3,
-    type: 2}
-  FencePrefab: {fileID: 1477919673491254, guid: 1cb6421fb4fa55d4dbe4a9c57fd756ff,
-    type: 2}
-  ObstacleSpot: {fileID: 0}
+  PlayerPosition: {fileID: 4996220916867010}
 --- !u!114 &114931067605629230
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1519,8 +1487,4 @@ MonoBehaviour:
   Debugging: 0
   LeftTile: {fileID: 1872323578690034}
   RightTile: {fileID: 1513701734956264}
-  BlockerPrefab: {fileID: 1458006233022448, guid: 44764aaa17c12cd4bb4a30968b874be3,
-    type: 2}
-  FencePrefab: {fileID: 1477919673491254, guid: 1cb6421fb4fa55d4dbe4a9c57fd756ff,
-    type: 2}
-  ObstacleSpot: {fileID: 0}
+  PlayerPosition: {fileID: 4682393560456736}

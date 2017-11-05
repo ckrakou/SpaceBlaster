@@ -5,14 +5,18 @@ using UnityEngine;
 public class SectionController : MonoBehaviour {
 
     public bool Debugging;
+    public GameObject BlockerPrefab;
+    public GameObject FencePrefab;
 
     private void Awake()
     {
         if (Debugging)
         {
-            foreach (var laneController in GetComponentsInChildren<LaneController>())
+            foreach (var spawner in GetComponentsInChildren<ObstacleSpawner>())
             {
-                laneController.Debugging = true;
+                spawner.Debugging = true;
+                spawner.BlockerPrefab = BlockerPrefab;
+                spawner.FencePrefab = FencePrefab;
             }
         }
     }
