@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class LaneController : MonoBehaviour
 {
-
     public bool Debugging;
     public GameObject LeftTile;
     public GameObject RightTile;
