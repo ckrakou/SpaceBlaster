@@ -10,19 +10,21 @@ public class ObstacleSpawner : MonoBehaviour
     public GameObject FencePrefab;
     public Transform ObstacleSpot;
 
-
-    // Use this for initialization
-    void Start()
+    public void SpawnBlocker()
     {
+        Instantiate(BlockerPrefab, ObstacleSpot.position, this.transform.rotation, this.transform);
         if (Debugging)
         {
-            Instantiate(BlockerPrefab, ObstacleSpot.position, this.transform.rotation, this.transform);
+            Debug.Log("ObstacleSpawner: Spawned Blocker");
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SpawnFence()
     {
-
+        Instantiate(FencePrefab, ObstacleSpot.position, this.transform.rotation, this.transform);
+        if (Debugging)
+        {
+            Debug.Log("ObstacleSpawner: Spawned Fence");
+        }
     }
 }
