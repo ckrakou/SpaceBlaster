@@ -6,6 +6,7 @@ public class Projectile : MonoBehaviour {
 
     public float Velocity = 20f;
     public float TimeAlive = 2f;
+    public Vector3 Direction = Vector3.right;
 
 
 	// Use this for initialization
@@ -15,12 +16,12 @@ public class Projectile : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-            transform.position += transform.right * Velocity * Time.deltaTime;
+            transform.position += Direction * Velocity * Time.deltaTime;
 	}
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag.Equals("Enemy"))
+        if (other.gameObject.tag.Equals("Fence"))
         {
             Destroy(other.gameObject);
             Destroy(this.gameObject);

@@ -9,7 +9,7 @@ public class PlayerControl : MonoBehaviour
     public bool Debugging = false;
     public InputMode inputMode = InputMode.Keyboard;
     public string ShootButton = "fire1";
-    public Transform BulletSpawnPoint;
+    public Transform LaserSpawnPoint;
     public GameObject BulletPrefab;
     public float ObservedMiddleValue = 0.3f;
     public LaneController InitialLane;
@@ -51,6 +51,17 @@ public class PlayerControl : MonoBehaviour
         {
             shotFired = false;
         }
+    }
+
+    private void FireLaser()
+    {
+        if (Debugging)
+        {
+            Debug.Log("Firing Laser!");
+        }
+
+        Instantiate(BulletPrefab, LaserSpawnPoint.position, transform.rotation, currentLane.transform);
+        shotFired = true;
     }
 
     private void UpdatePosition()
@@ -141,16 +152,7 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
-    private void FireLaser()
-    {
-        if (Debugging)
-        {
-            Debug.Log("Firing Laser!");
-        }
-
-        Instantiate(BulletPrefab, BulletSpawnPoint.position, transform.rotation);
-        shotFired = true;
-    }
+    
 
     private void ReadJoystick()
     {
