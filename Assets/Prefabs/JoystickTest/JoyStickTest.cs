@@ -7,7 +7,6 @@ public class JoyStickTest : MonoBehaviour
     public bool ZeroInput = false;
     public float ObservedMiddleValue;
     public float horizontalOffset;
-    public float verticalOffset;
 
     
 
@@ -16,7 +15,6 @@ public class JoyStickTest : MonoBehaviour
     {
         if (ZeroInput)
         {
-            verticalOffset = Input.GetAxis("Vertical");
             horizontalOffset = Input.GetAxis("Horizontal");
         }
     }
@@ -26,11 +24,14 @@ public class JoyStickTest : MonoBehaviour
     {
         
         Debug.Log(
-         (Input.GetAxis("Horizontal") - horizontalOffset) + " ____ " +
-         (Input.GetAxis("Vertical") - verticalOffset)
+         (Input.GetAxis("Horizontal") - horizontalOffset) + " ____ "
          );
+        if (Input.GetAxis("Horizontal") - horizontalOffset == 0)
+        {
+            Debug.Log("Nothing");
 
-        if (Input.GetAxis("Horizontal") - horizontalOffset < ObservedMiddleValue)
+        }
+        else if (Input.GetAxis("Horizontal") - horizontalOffset < 0)
         {
             Debug.Log("Left");
 
@@ -40,15 +41,7 @@ public class JoyStickTest : MonoBehaviour
             Debug.Log("Right");
         }
 
-        if (Input.GetAxis("Vertical") - verticalOffset < ObservedMiddleValue)
-        {
-            Debug.Log("Down");
-
-        }
-        else
-        {
-            Debug.Log("Up");
-        }
+        
 
     }
 }
