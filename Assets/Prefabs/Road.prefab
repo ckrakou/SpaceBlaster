@@ -1485,6 +1485,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 865f66de87c5a41459835eac103adfc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DifficultyLevels: []
+  PointsThreshold: 0
 --- !u!114 &114349987857282520
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1559,7 +1561,7 @@ MonoBehaviour:
   TilePrefab: {fileID: 1146667737855004, guid: 6065cdcb79fde27409cf7cee23393857, type: 2}
   TileLength: 10
   TileSpeed: 20
-  SpawnPoint: {x: 0, y: 0, z: 120}
+  SpawnPoint: {x: 0, y: 0, z: 150}
   KillPoint: {x: 0, y: 0, z: -15}
 --- !u!114 &114931067605629230
 MonoBehaviour:
@@ -1587,3 +1589,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84dd7ef7d678c2940a09959d160b37cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Score: 0
+  GUI: {fileID: 0}

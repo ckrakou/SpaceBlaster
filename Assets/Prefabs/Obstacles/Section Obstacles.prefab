@@ -658,9 +658,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Debugging: 1
-  BlockerPrefab: {fileID: 1458006233022448, guid: 44764aaa17c12cd4bb4a30968b874be3,
+  BlockerPrefab: {fileID: 1838543552268246, guid: 44764aaa17c12cd4bb4a30968b874be3,
     type: 2}
-  FencePrefab: {fileID: 1477919673491254, guid: 1cb6421fb4fa55d4dbe4a9c57fd756ff,
+  FencePrefab: {fileID: 1348562247243714, guid: 1cb6421fb4fa55d4dbe4a9c57fd756ff,
     type: 2}
   FilledSpots: 6
   BlockerToFenceRatio: 0.5
