@@ -7,14 +7,16 @@ public class PlayerControl : MonoBehaviour
 {
 
     public bool Debugging = false;
-    public InputMode inputMode = InputMode.Keyboard;
+    [Header("Input Settings")]
     public string ShootButton = "fire1";
+    public string MoveAxis = "Horizontal";
+    [Header("Scene Settings")]
     public Transform LaserSpawnPoint;
     public GameObject BulletPrefab;
-    public float ObservedMiddleValue = 0.3f;
     public LaneController InitialLane;
 
     private bool shotFired = false;
+    private bool hasMoved = false;
     private float horizontalOffset;
 
     private LaneController currentLane;
@@ -24,14 +26,13 @@ public class PlayerControl : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        if (inputMode == InputMode.Joystick)
+        horizontalOffset = Input.GetAxis("Horizontal");
+
+        if (Debugging)
         {
-            horizontalOffset = Input.GetAxis("Horizontal");
-            if (Debugging)
-            {
-                Debug.Log("Horizontal Offset: " + horizontalOffset);
-            }
+            Debug.Log("Horizontal Offset: " + horizontalOffset);
         }
+
         currentLane = InitialLane;
         MovePlayer();
     }
@@ -42,26 +43,28 @@ public class PlayerControl : MonoBehaviour
     void Update()
     {
         UpdatePosition();
+        FireLaser();
+    }
+
+    private void FireLaser()
+    {
         if (Input.GetAxis(ShootButton) > 0 && !shotFired)
         {
-            FireLaser();
+            if (Debugging)
+            {
+                Debug.Log("Firing Laser!");
+            }
+
+            Instantiate(BulletPrefab, LaserSpawnPoint.position, transform.rotation, currentLane.transform);
+            shotFired = true;
         }
 
         if (Input.GetAxis(ShootButton) <= 0)
         {
             shotFired = false;
         }
-    }
 
-    private void FireLaser()
-    {
-        if (Debugging)
-        {
-            Debug.Log("Firing Laser!");
-        }
 
-        Instantiate(BulletPrefab, LaserSpawnPoint.position, transform.rotation, currentLane.transform);
-        shotFired = true;
     }
 
     private void UpdatePosition()
@@ -108,78 +111,38 @@ public class PlayerControl : MonoBehaviour
 
     private void ReadInput()
     {
-        switch (inputMode)
-        {
-            case InputMode.Keyboard:
-                ReadKeyboard();
-                break;
-            case InputMode.Joystick:
-                ReadJoystick();
-                break;
-            default:
-                ReadJoystick();
-                break;
-        }
-
-        if (horizontalReading == 0)
-        {
-            nextMove = Move.Center;
-        }
-        else if (horizontalReading == 1)
-        {
-            nextMove = Move.Right;
-        }
-        else if (horizontalReading == -1)
-        {
-            nextMove = Move.Left;
-        }
-    }
-
-    private void ReadKeyboard()
-    {
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            horizontalReading = 1;
-        }
-        else if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            horizontalReading = -1;
-        }
-        else
-        {
-            horizontalReading = 0;
-
-        }
-    }
-
-    
-
-    private void ReadJoystick()
-    {
-        float horizontal = Input.GetAxis("Horizontal") - horizontalOffset;
-
-        if (horizontal == 0)
-        {
-            horizontalReading = 0;
-        }
-        else if (horizontal < ObservedMiddleValue)
-        {
-            horizontalReading = 1;
-        }
-        else
-        {
-            horizontalReading = -1;
-        }
+        float movement = Input.GetAxis(MoveAxis) - horizontalOffset;
 
         if (Debugging)
         {
-            Debug.Log("Horizontal Input: " + horizontal + " - " + horizontalReading);
+            Debug.Log("PlayerControl: Movement Axis = " + movement + ", HasMoved = " + hasMoved);
         }
-    }
 
-    public enum InputMode
-    {
-        Keyboard, Joystick
+        if (hasMoved)
+        {
+            nextMove = Move.Center;
+            if (movement == 0)
+            {
+                hasMoved = false;
+            }
+        }
+        else
+        {
+            if (movement == 0)
+            {
+                nextMove = Move.Center;
+            }
+            else if (movement > 0)
+            {
+                nextMove = Move.Right;
+                hasMoved = true;
+            }
+            else if (movement < 0)
+            {
+                nextMove = Move.Left;
+                hasMoved = true;
+            }
+        }
     }
 
     private enum Move

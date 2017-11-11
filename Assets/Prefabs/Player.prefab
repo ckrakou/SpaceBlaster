@@ -156,6 +156,8 @@ MonoBehaviour:
   Debugging: 0
   inputMode: 0
   ShootButton: Shoot
+  LeftButton: MoveLeft
+  RightButton: MoveRight
   LaserSpawnPoint: {fileID: 4899924366534696}
   BulletPrefab: {fileID: 1266495924230554, guid: eee2891a198deba4db22b98774cd8820,
     type: 2}

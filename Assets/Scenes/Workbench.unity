@@ -156,6 +156,11 @@ Prefab:
       propertyPath: InitialLane
       value: 
       objectReference: {fileID: 966235195}
+    - target: {fileID: 114641669468772946, guid: 69e12bf0db057364e8424e4a66c3db26,
+        type: 2}
+      propertyPath: Debugging
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 69e12bf0db057364e8424e4a66c3db26, type: 2}
   m_IsPrefabParent: 0
