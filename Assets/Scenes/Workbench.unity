@@ -157,16 +157,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114641669468772946, guid: 69e12bf0db057364e8424e4a66c3db26,
-        type: 2}
-      propertyPath: InitialLane
-      value: 
-      objectReference: {fileID: 966235195}
     - target: {fileID: 114892259196564566, guid: 69e12bf0db057364e8424e4a66c3db26,
         type: 2}
       propertyPath: GameManager
       value: 
       objectReference: {fileID: 2002512928}
+    - target: {fileID: 114641669468772946, guid: 69e12bf0db057364e8424e4a66c3db26,
+        type: 2}
+      propertyPath: InitialLane
+      value: 
+      objectReference: {fileID: 966235195}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 69e12bf0db057364e8424e4a66c3db26, type: 2}
   m_IsPrefabParent: 0
