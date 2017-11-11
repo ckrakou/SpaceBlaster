@@ -7,6 +7,8 @@ public class DifficultyManager : MonoBehaviour {
     public DifficultyLevel[] DifficultyLevels;
     public float PointsThreshold;
 
+    private TileSpawner spawner;
+
 	// Use this for initialization
 	void Start () {
 		

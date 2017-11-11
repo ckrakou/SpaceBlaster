@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class GameFlowManager : MonoBehaviour
 {
-    private List<Component> toDeactivate;
     // Use this for initialization
     void Start()
     {
@@ -24,7 +23,7 @@ public class GameFlowManager : MonoBehaviour
         {
             obstacle.GetComponent<TileRunner>().Speed = 0;
         }
-        GameObject.Find("Road").GetComponent<TileSpawner>().enabled = false;
+        this.gameObject.GetComponent<TileSpawner>().enabled = false;
         GameObject.Find("Player").GetComponent<PlayerControl>().enabled = false;
     }
 }

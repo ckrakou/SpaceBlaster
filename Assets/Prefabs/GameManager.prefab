@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 114511399122005954}
   - component: {fileID: 114915723823929242}
   - component: {fileID: 114733565237307248}
+  - component: {fileID: 114028120792984434}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -101,6 +102,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 20, y: 20, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114028120792984434
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1646920203886506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7f10003a1780fa4e8078a23bf2b19bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TilePrefab: {fileID: 1146667737855004, guid: 6065cdcb79fde27409cf7cee23393857, type: 2}
+  TileLength: 10
+  TileSpeed: 20
+  SpawnPoint: {x: 0, y: 0, z: 150}
+  KillPoint: {x: 0, y: 0, z: -15}
 --- !u!114 &114325078792594202
 MonoBehaviour:
   m_ObjectHideFlags: 1
