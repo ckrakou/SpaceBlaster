@@ -18,7 +18,6 @@ public class PlayerControl : MonoBehaviour
     private bool shotFired = false;
     private bool hasMoved = false;
     private float horizontalOffset;
-
     private LaneController currentLane;
     private float horizontalReading;
     private Move nextMove = Move.Center;
