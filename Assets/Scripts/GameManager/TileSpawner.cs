@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TileSpawner : MonoBehaviour {
+public class TileSpawner : MonoBehaviour
+{
 
     public GameObject TilePrefab;
     public float TileLength = 10;
@@ -13,23 +14,22 @@ public class TileSpawner : MonoBehaviour {
     private float spawnRate;
     private float nextSpawnTimeStamp;
     private float spawnInterval;
-    private float distanceToTravel;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         nextSpawnTimeStamp = Time.time;
         spawnInterval = TileLength / TileSpeed;
-        distanceToTravel = Vector3.Distance(SpawnPoint, KillPoint);
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		if (Time.time >= nextSpawnTimeStamp)
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Time.time >= nextSpawnTimeStamp)
         {
             nextSpawnTimeStamp = Time.time + spawnInterval - Time.deltaTime;
-            TileRunner tile = Instantiate(TilePrefab, SpawnPoint, Quaternion.identity,this.transform).GetComponent<TileRunner>();
+            TileRunner tile = Instantiate(TilePrefab, SpawnPoint, Quaternion.identity, this.transform).GetComponent<TileRunner>();
             tile.Speed = TileSpeed;
-            tile.DistanceToTravel = distanceToTravel;
         }
     }
 }

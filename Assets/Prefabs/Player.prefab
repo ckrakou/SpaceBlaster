@@ -20,6 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4160764068592090}
   - component: {fileID: 114641669468772946}
+  - component: {fileID: 114892259196564566}
+  - component: {fileID: 136919599712954056}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -52,7 +54,6 @@ GameObject:
   - component: {fileID: 4531574794232114}
   - component: {fileID: 33644248878720172}
   - component: {fileID: 23495470690151176}
-  - component: {fileID: 136824776188899804}
   m_Layer: 0
   m_Name: Graphics
   m_TagString: Untagged
@@ -154,21 +155,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Debugging: 0
-  inputMode: 0
   ShootButton: Shoot
-  LeftButton: MoveLeft
-  RightButton: MoveRight
+  MoveAxis: Horizontal
   LaserSpawnPoint: {fileID: 4899924366534696}
   BulletPrefab: {fileID: 1266495924230554, guid: eee2891a198deba4db22b98774cd8820,
     type: 2}
-  ObservedMiddleValue: 0.4
   InitialLane: {fileID: 0}
---- !u!136 &136824776188899804
+--- !u!114 &114892259196564566
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1302483438478964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e1269b5a03dcf44ab85d2a0a55fbf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Debugging: 0
+  scoreKeeper: {fileID: 0}
+--- !u!136 &136919599712954056
 CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1713567828717332}
+  m_GameObject: {fileID: 1302483438478964}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1

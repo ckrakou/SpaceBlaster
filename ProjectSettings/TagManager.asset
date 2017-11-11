@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Fence
   - Blocker
+  - Section
   layers:
   - Default
   - TransparentFX

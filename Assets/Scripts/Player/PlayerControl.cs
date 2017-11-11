@@ -36,14 +36,16 @@ public class PlayerControl : MonoBehaviour
         MovePlayer();
     }
 
-    
-
     // Update is called once per frame
     void Update()
     {
         UpdatePosition();
         FireLaser();
     }
+
+    /*
+     * PRIVATE METHODS 
+     */
 
     private void FireLaser()
     {
