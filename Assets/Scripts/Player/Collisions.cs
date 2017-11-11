@@ -5,13 +5,17 @@ using UnityEngine;
 public class Collisions : MonoBehaviour
 {
     public bool Debugging = false;
-    public ScoreKeeper scoreKeeper;
+    public GameObject GameManager;
+
+    private ScoreKeeper scoreKeeper;
+    private GameFlowManager gameFlowManager;
 
 
     // Use this for initialization
     void Start()
     {
-
+        scoreKeeper = GameManager.GetComponent<ScoreKeeper>();
+        gameFlowManager = GameManager.GetComponent<GameFlowManager>();
     }
 
     // Update is called once per frame
@@ -35,6 +39,7 @@ public class Collisions : MonoBehaviour
             {
                 Debug.Log("Collisions: Passed through a Section");
             }
+
             scoreKeeper.PassedSection();
         }
         else if (tag == "Blocker")
@@ -43,8 +48,7 @@ public class Collisions : MonoBehaviour
             {
                 Debug.Log("Collisions: Passed through a Blocker");
             }
-
-            // lose life / die / whatever
+            gameFlowManager.EndGame();
         }
         else if (tag == "Fence")
         {
@@ -52,7 +56,9 @@ public class Collisions : MonoBehaviour
             {
                 Debug.Log("Collisions: Passed through a Fence");
             }
-            // lose life / die / whatever
+
+            gameFlowManager.EndGame();
+
         }
     }
 }
