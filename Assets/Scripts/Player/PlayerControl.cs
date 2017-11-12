@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class PlayerControl : MonoBehaviour
 {
@@ -77,21 +78,24 @@ public class PlayerControl : MonoBehaviour
 
     private void MovePlayer()
     {
-        transform.position = currentLane.PlayerPosition.position;
-        transform.rotation = currentLane.PlayerPosition.rotation;
+        transform.DOMove(currentLane.PlayerPosition.position, 0.1f);
+        transform.DORotateQuaternion(currentLane.PlayerPosition.rotation, 0.1f);
+        //transform.position = currentLane.PlayerPosition.position;
+        //transform.rotation = currentLane.PlayerPosition.rotation;
         switch (nextMove)
         {
             case Move.Left:
-                currentLane.transform.root.Rotate(Vector3.forward, -40);
+                currentLane.transform.root.DORotate(currentLane.transform.root.rotation.eulerAngles + new Vector3(0, 0, -40),0.1f);
+                //currentLane.transform.root.Rotate(Vector3.forward, -40);
                 break;
             case Move.Right:
-                currentLane.transform.root.Rotate(Vector3.forward, 40);
+                currentLane.transform.root.DORotate(currentLane.transform.root.rotation.eulerAngles + new Vector3(0, 0, 40), 0.1f);
+                //currentLane.transform.root.Rotate(Vector3.forward, 40);
                 break;
             case Move.Center:
             default:
                 break;
         }
-        // TODO: fancy rotation
     }
 
     private void DetermineNextPosition()
