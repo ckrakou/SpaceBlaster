@@ -28,7 +28,7 @@ public class TileSpawner : MonoBehaviour
         if (Time.time >= nextSpawnTimeStamp)
         {
             nextSpawnTimeStamp = Time.time + SpawnInterval - Time.deltaTime;
-            TileRunner tile = Instantiate(TilePrefab, SpawnPoint, Quaternion.identity, Road.transform).GetComponent<TileRunner>();
+            TileRunner tile = Instantiate(TilePrefab, SpawnPoint, Road.transform.rotation, Road.transform).GetComponent<TileRunner>();
             tile.Speed = TileSpeed;
         }
     }
