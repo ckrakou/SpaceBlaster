@@ -172,10 +172,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DifficultyLevels:
-  - Interval: 10
-    Speed: 10
-  - Interval: 7
-    Speed: 20
+  - Interval: 3
+    Speed: 15
   - Interval: 3
     Speed: 30
+  - Interval: 3
+    Speed: 45
   PointsThreshold: 50

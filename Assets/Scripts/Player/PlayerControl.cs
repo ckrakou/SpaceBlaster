@@ -19,9 +19,11 @@ public class PlayerControl : MonoBehaviour
     private bool shotFired = false;
     private bool hasMoved = false;
     private float horizontalOffset;
-    private LaneController currentLane;
     private float horizontalReading;
     private Move nextMove = Move.Center;
+
+    private LaneController currentLane;
+    private RoadTurner roadTurner;
 
     // Use this for initialization
     void Start()
@@ -34,6 +36,7 @@ public class PlayerControl : MonoBehaviour
         }
 
         currentLane = InitialLane;
+        roadTurner = InitialLane.transform.root.GetComponent<RoadTurner>();
         MovePlayer();
     }
 
@@ -85,14 +88,17 @@ public class PlayerControl : MonoBehaviour
         transform.position = currentLane.PlayerPosition.position;
         transform.rotation = currentLane.PlayerPosition.rotation;
         Transform road = currentLane.transform.root;
+        
         switch (nextMove)
         {
             case Move.Left:
-                road.DORotate(currentLane.transform.root.rotation.eulerAngles + new Vector3(0, 0, -40),0.2f);
+                roadTurner.TurnRight();
+                //road.DORotate(currentLane.transform.root.rotation.eulerAngles + new Vector3(0, 0, -40),0.2f);
                 //currentLane.transform.root.Rotate(Vector3.forward, -40);
                 break;
             case Move.Right:
-                road.DORotate(currentLane.transform.root.rotation.eulerAngles + new Vector3(0, 0, 40), 0.2f);
+                roadTurner.TurnLeft();
+                //road.DORotate(currentLane.transform.root.rotation.eulerAngles + new Vector3(0, 0, 40), 0.2f);
                 //currentLane.transform.root.Rotate(Vector3.forward, 40);
                 break;
             case Move.Center:
