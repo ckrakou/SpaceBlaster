@@ -627,7 +627,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 20
-  DistanceToTravel: 124
   Direction: {x: 0, y: 0, z: -1}
 --- !u!114 &114365827447162652
 MonoBehaviour:
@@ -670,12 +669,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e2d1031a50faf642a89aa5460094341, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Debugging: 1
+  Debugging: 0
   BlockerPrefab: {fileID: 1838543552268246, guid: 44764aaa17c12cd4bb4a30968b874be3,
     type: 2}
   FencePrefab: {fileID: 1348562247243714, guid: 1cb6421fb4fa55d4dbe4a9c57fd756ff,
     type: 2}
-  FilledSpots: 6
+  FilledSpots: 9
   BlockerToFenceRatio: 0.5
 --- !u!114 &114510131767126370
 MonoBehaviour:

@@ -178,4 +178,4 @@ MonoBehaviour:
     Speed: 30
   - Interval: 3
     Speed: 45
-  PointsThreshold: 50
+  PointsThreshold: 100
