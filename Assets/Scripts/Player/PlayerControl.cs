@@ -57,7 +57,7 @@ public class PlayerControl : MonoBehaviour
                 Debug.Log("Firing Laser!");
             }
 
-            Instantiate(BulletPrefab, LaserSpawnPoint.position, transform.rotation, currentLane.transform);
+            Instantiate(BulletPrefab, LaserSpawnPoint.position, transform.rotation, currentLane.transform.root);
             shotFired = true;
         }
 
