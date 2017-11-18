@@ -60,6 +60,16 @@ public class ScoreKeeper : MonoBehaviour {
 
     }
 
+    internal void Reset()
+    {
+        if (Debugging)
+        {
+            Debug.Log("ScoreKeeper: Resetting Score");
+        }
+        score = 0;
+        guiSynced = false;
+    }
+
     private void UpdateGUI()
     {
         if (Debugging)

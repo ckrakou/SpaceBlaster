@@ -29,9 +29,21 @@ public class GameFlowManager : MonoBehaviour
                 {
                     Debug.Log("GameFlowManager: Restarting");
                 }
-                SceneManager.LoadScene(currentScene.buildIndex);
+                Reset();
             }
         }
+    }
+
+    private void Reset()
+    {
+        foreach (var obstacle in GameObject.FindGameObjectsWithTag("Section"))
+        {
+            Destroy(obstacle);
+        }
+        this.gameObject.GetComponent<TileSpawner>().enabled = true;
+        GameObject.Find("Player").GetComponent<PlayerControl>().enabled = true;
+        GetComponent<ScoreKeeper>().Reset();
+        
     }
 
     public void EndGame()
