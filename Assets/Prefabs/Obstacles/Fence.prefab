@@ -19,6 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4399997458369212}
+  - component: {fileID: 114554735815480712}
   m_Layer: 0
   m_Name: Fence
   m_TagString: Fence
@@ -126,3 +127,16 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 54d3949b3d1d84601ba6be2628095365, type: 2}
+--- !u!114 &114554735815480712
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1348562247243714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41f70e9bdb72f42459c0256bd6806817, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnTime: 1.5
+  DestroyTime: 0.2

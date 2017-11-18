@@ -56,7 +56,6 @@ public class Collisions : MonoBehaviour
             {
                 Debug.Log("Collisions: Passed through a Fence");
             }
-
             gameFlowManager.EndGame();
 
         }

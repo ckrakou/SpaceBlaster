@@ -81,10 +81,6 @@ public class PlayerControl : MonoBehaviour
 
     private void MovePlayer()
     {
-        /*
-        transform.DOMove(currentLane.PlayerPosition.position, 0.1f);
-        transform.DORotateQuaternion(currentLane.PlayerPosition.rotation, 0.1f);
-        */
         transform.position = currentLane.PlayerPosition.position;
         transform.rotation = currentLane.PlayerPosition.rotation;
         Transform road = currentLane.transform.root;
@@ -93,13 +89,9 @@ public class PlayerControl : MonoBehaviour
         {
             case Move.Left:
                 roadTurner.TurnRight();
-                //road.DORotate(currentLane.transform.root.rotation.eulerAngles + new Vector3(0, 0, -40),0.2f);
-                //currentLane.transform.root.Rotate(Vector3.forward, -40);
                 break;
             case Move.Right:
                 roadTurner.TurnLeft();
-                //road.DORotate(currentLane.transform.root.rotation.eulerAngles + new Vector3(0, 0, 40), 0.2f);
-                //currentLane.transform.root.Rotate(Vector3.forward, 40);
                 break;
             case Move.Center:
             default:

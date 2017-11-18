@@ -37,6 +37,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4177975762848696}
+  - component: {fileID: 114827537185177930}
   m_Layer: 0
   m_Name: Blocker
   m_TagString: Blocker
@@ -126,3 +127,16 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 54d3949b3d1d84601ba6be2628095365, type: 2}
+--- !u!114 &114827537185177930
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1838543552268246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41f70e9bdb72f42459c0256bd6806817, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnTime: 1.5
+  DestroyTime: 0.2

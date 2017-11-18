@@ -26,7 +26,7 @@ public class Projectile : MonoBehaviour
     {
         if (other.gameObject.tag.Equals("Fence"))
         {
-            Destroy(other.gameObject);
+            other.GetComponentInParent<ObstacleJuice>().Remove();
             Destroy(this.gameObject);
             GameObject.Find("GameManager").GetComponent<ScoreKeeper>().ShotFence();
         }
