@@ -42,14 +42,22 @@ public class SectionController : MonoBehaviour {
                 index = UnityEngine.Random.Range(0, spawns.Length);
             } while (filledSpots.Contains(index) == true);
 
-            if (UnityEngine.Random.Range(0f, 1f) >= BlockerToFenceRatio)
-            {
-                spawns[index].SpawnBlocker();
-            }
-            else
+            if (i == 0)
             {
                 spawns[index].SpawnFence();
             }
+            else
+            {
+                if (UnityEngine.Random.Range(0f, 1f) >= BlockerToFenceRatio)
+                {
+                    spawns[index].SpawnBlocker();
+                }
+                else
+                {
+                    spawns[index].SpawnFence();
+                }
+            }
+            
 
             filledSpots.Add(index);
 
