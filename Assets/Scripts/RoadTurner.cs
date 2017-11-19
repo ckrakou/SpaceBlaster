@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using System;
 
 public class RoadTurner : MonoBehaviour {
 
@@ -25,13 +26,18 @@ public class RoadTurner : MonoBehaviour {
     {
         DOTween.Kill(transform);
         currentEulerRotation += new Vector3(0, 0, 40);
-        transform.DORotate(currentEulerRotation, SecondsPerTurn, RotateMode.Fast);
+        transform.DORotate(currentEulerRotation, SecondsPerTurn, RotateMode.Fast).onComplete = new TweenCallback(ResetRotation);
+    }
+
+    private void ResetRotation()
+    {
+        currentEulerRotation = transform.rotation.eulerAngles;
     }
 
     public void TurnRight()
     {
         DOTween.Kill(transform);
         currentEulerRotation += new Vector3(0, 0, -40);
-        transform.DORotate(currentEulerRotation, SecondsPerTurn, RotateMode.Fast);
+        transform.DORotate(currentEulerRotation, SecondsPerTurn, RotateMode.Fast).onComplete = new TweenCallback(ResetRotation); ;
     }
 }
