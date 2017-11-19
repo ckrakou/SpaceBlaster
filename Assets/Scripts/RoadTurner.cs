@@ -9,7 +9,7 @@ public class RoadTurner : MonoBehaviour {
     public float DegreesPerTurn = 40f;
     public float SecondsPerTurn = 0.2f;
 
-    Vector3 currentEulerRotation;
+    private Vector3 currentEulerRotation;
 
 	// Use this for initialization
 	void Start () {
@@ -40,4 +40,6 @@ public class RoadTurner : MonoBehaviour {
         currentEulerRotation += new Vector3(0, 0, -40);
         transform.DORotate(currentEulerRotation, SecondsPerTurn, RotateMode.Fast).onComplete = new TweenCallback(ResetRotation); ;
     }
+
+
 }

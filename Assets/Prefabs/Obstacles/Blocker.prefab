@@ -138,5 +138,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f70e9bdb72f42459c0256bd6806817, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnTime: 1.5
+  SpawnTime: 0.5
   DestroyTime: 0.2

@@ -10,6 +10,7 @@ public class GameFlowManager : MonoBehaviour
 
     private bool hasEnded;
     private GameObject player;
+    private float restartTimestamp;
 
     // Use this for initialization
     void Start()
@@ -22,7 +23,7 @@ public class GameFlowManager : MonoBehaviour
     {
         if (hasEnded)
         {
-            if (Input.GetAxis("Shoot") > 0)
+            if (Time.time > restartTimestamp && Input.GetAxis("Shoot") > 0)
             {
                 if (Debugging)
                 {
@@ -53,14 +54,19 @@ public class GameFlowManager : MonoBehaviour
         {
             Debug.Log("GameFlowManager: Ending Game");
         }
+
+        this.gameObject.GetComponent<TileSpawner>().enabled = false;
+        player.GetComponent<PlayerControl>().enabled = false;
+
         foreach (var obstacle in GameObject.FindGameObjectsWithTag("Section"))
         {
             obstacle.GetComponent<TileRunner>().Speed = 0;
         }
-        this.gameObject.GetComponent<TileSpawner>().enabled = false;
-        player.GetComponent<PlayerControl>().enabled = false;
+
         player.GetComponentInChildren<PlayerSound>().Explode();
         player.GetComponentInChildren<PlayerJuice>().FadeOut();
+
         hasEnded = true;
+        restartTimestamp = Time.time + player.GetComponentInChildren<PlayerJuice>().DestroyTime;
     }
 }

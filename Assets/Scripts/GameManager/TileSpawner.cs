@@ -8,11 +8,11 @@ public class TileSpawner : MonoBehaviour
 
     public GameObject TilePrefab;
     public GameObject Road;
+    public Vector3 SpawnPoint;
+    public Vector3 KillPoint;
 
     public float SpawnInterval = 10;
     public float TileSpeed = 5;
-    public Vector3 SpawnPoint;
-    public Vector3 KillPoint;
 
     private float nextSpawnTimeStamp;
 
