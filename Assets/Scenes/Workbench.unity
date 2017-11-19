@@ -308,6 +308,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114560021155190392, guid: 93b926663081fec4b8f7da8b295e98f7,
+        type: 2}
+      propertyPath: BackgroundMusicTracks.Array.size
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 4098731993233872, guid: 93b926663081fec4b8f7da8b295e98f7, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -344,6 +349,41 @@ Prefab:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 114560021155190392, guid: 93b926663081fec4b8f7da8b295e98f7,
+        type: 2}
+      propertyPath: BackgroundMusicTracks.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 58b55568cd5403746a9ea649fb738926, type: 3}
+    - target: {fileID: 114560021155190392, guid: 93b926663081fec4b8f7da8b295e98f7,
+        type: 2}
+      propertyPath: BackgroundMusicTracks.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 008b47afc973f3c4fbc8ad40457eb6c5, type: 3}
+    - target: {fileID: 114560021155190392, guid: 93b926663081fec4b8f7da8b295e98f7,
+        type: 2}
+      propertyPath: BackgroundMusicTracks.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: dca6e79c3f7418c4e9747366d580439a, type: 3}
+    - target: {fileID: 114560021155190392, guid: 93b926663081fec4b8f7da8b295e98f7,
+        type: 2}
+      propertyPath: BackgroundMusicTracks.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 005d6a274675f6e4c8e26664f99f03a1, type: 3}
+    - target: {fileID: 114560021155190392, guid: 93b926663081fec4b8f7da8b295e98f7,
+        type: 2}
+      propertyPath: BackgroundMusicTracks.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 04e25e51484c0134f810bb44a0685a11, type: 3}
+    - target: {fileID: 114560021155190392, guid: 93b926663081fec4b8f7da8b295e98f7,
+        type: 2}
+      propertyPath: BackgroundMusicTracks.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: f2985fa3da4938c41bbdab6a574215ce, type: 3}
+    - target: {fileID: 114560021155190392, guid: 93b926663081fec4b8f7da8b295e98f7,
+        type: 2}
+      propertyPath: BackgroundMusicTracks.Array.data[6]
+      value: 
+      objectReference: {fileID: 8300000, guid: e59f88085ddee9a4f9f393e862a3d80d, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 93b926663081fec4b8f7da8b295e98f7, type: 2}
   m_IsPrefabParent: 0

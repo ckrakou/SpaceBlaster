@@ -126,7 +126,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.3
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -206,7 +206,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 041b144660997304dbde22947096c8d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BackgroundMusicTracks: []
+  BackgroundMusicTracks:
+  - {fileID: 8300000, guid: 58b55568cd5403746a9ea649fb738926, type: 3}
+  - {fileID: 8300000, guid: 008b47afc973f3c4fbc8ad40457eb6c5, type: 3}
+  - {fileID: 8300000, guid: dca6e79c3f7418c4e9747366d580439a, type: 3}
+  - {fileID: 8300000, guid: 005d6a274675f6e4c8e26664f99f03a1, type: 3}
+  - {fileID: 8300000, guid: 04e25e51484c0134f810bb44a0685a11, type: 3}
+  - {fileID: 8300000, guid: f2985fa3da4938c41bbdab6a574215ce, type: 3}
+  - {fileID: 8300000, guid: e59f88085ddee9a4f9f393e862a3d80d, type: 3}
 --- !u!124 &124800868828990670
 Behaviour:
   m_ObjectHideFlags: 1
