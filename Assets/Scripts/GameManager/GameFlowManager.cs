@@ -9,13 +9,12 @@ public class GameFlowManager : MonoBehaviour
     public bool Debugging;
 
     private bool hasEnded;
-    private Scene currentScene;
+    private GameObject player;
 
     // Use this for initialization
     void Start()
     {
-
-        currentScene = SceneManager.GetActiveScene();
+        player = GameObject.Find("Player");
     }
 
     // Update is called once per frame
@@ -41,7 +40,8 @@ public class GameFlowManager : MonoBehaviour
             Destroy(obstacle);
         }
         this.gameObject.GetComponent<TileSpawner>().enabled = true;
-        GameObject.Find("Player").GetComponent<PlayerControl>().enabled = true;
+        player.GetComponent<PlayerControl>().enabled = true;
+        player.GetComponentInChildren<PlayerJuice>().FadeIn();
         GetComponent<ScoreKeeper>().Reset();
         hasEnded = false;
     }
@@ -57,7 +57,9 @@ public class GameFlowManager : MonoBehaviour
             obstacle.GetComponent<TileRunner>().Speed = 0;
         }
         this.gameObject.GetComponent<TileSpawner>().enabled = false;
-        GameObject.Find("Player").GetComponent<PlayerControl>().enabled = false;
+        player.GetComponent<PlayerControl>().enabled = false;
+        player.GetComponentInChildren<PlayerSound>().Explode();
+        player.GetComponentInChildren<PlayerJuice>().FadeOut();
         hasEnded = true;
     }
 }
