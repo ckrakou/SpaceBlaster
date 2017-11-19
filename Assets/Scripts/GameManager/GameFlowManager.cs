@@ -43,7 +43,7 @@ public class GameFlowManager : MonoBehaviour
         this.gameObject.GetComponent<TileSpawner>().enabled = true;
         GameObject.Find("Player").GetComponent<PlayerControl>().enabled = true;
         GetComponent<ScoreKeeper>().Reset();
-        
+        hasEnded = false;
     }
 
     public void EndGame()

@@ -112,11 +112,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!4 &142879891 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4160764068592090, guid: 69e12bf0db057364e8424e4a66c3db26,
-    type: 2}
-  m_PrefabInternal: {fileID: 644013829}
 --- !u!114 &150361436 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114715893405128112, guid: e39c9bcf2f5ab784998d4e3efda2bd30,
@@ -254,16 +249,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114892259196564566, guid: 69e12bf0db057364e8424e4a66c3db26,
-        type: 2}
-      propertyPath: GameManager
-      value: 
-      objectReference: {fileID: 2002512928}
     - target: {fileID: 114641669468772946, guid: 69e12bf0db057364e8424e4a66c3db26,
         type: 2}
       propertyPath: InitialLane
       value: 
       objectReference: {fileID: 966235195}
+    - target: {fileID: 114892259196564566, guid: 69e12bf0db057364e8424e4a66c3db26,
+        type: 2}
+      propertyPath: GameManager
+      value: 
+      objectReference: {fileID: 2002512928}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 69e12bf0db057364e8424e4a66c3db26, type: 2}
   m_IsPrefabParent: 0
@@ -309,145 +304,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eee2891a198deba4db22b98774cd8820, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &680497827 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1572109638462658, guid: 93b926663081fec4b8f7da8b295e98f7,
-    type: 2}
-  m_PrefabInternal: {fileID: 772274306}
---- !u!114 &680497828
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 680497827}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 041b144660997304dbde22947096c8d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &763689221
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 763689222}
-  - component: {fileID: 763689224}
-  - component: {fileID: 763689223}
-  m_Layer: 0
-  m_Name: Sound Effect
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &763689222
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 763689221}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 142879891}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &763689223
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 763689221}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68fdf24986533254ea388965f2ef9d92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShootSound: {fileID: 8300000, guid: aa60b9e876033be4cb1e3faae544ee91, type: 3}
-  DeathSound: {fileID: 8300000, guid: 9e6f076ff21456f48af2c4650860d296, type: 3}
---- !u!82 &763689224
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 763689221}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
 --- !u!1001 &772274306
 Prefab:
   m_ObjectHideFlags: 0
@@ -490,6 +346,11 @@ Prefab:
     - target: {fileID: 1498144848923742, guid: 93b926663081fec4b8f7da8b295e98f7, type: 2}
       propertyPath: m_Name
       value: Main Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 82201932180600222, guid: 93b926663081fec4b8f7da8b295e98f7,
+        type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 93b926663081fec4b8f7da8b295e98f7, type: 2}
