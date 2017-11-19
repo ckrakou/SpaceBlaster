@@ -31,6 +31,7 @@ public class GameFlowManager : MonoBehaviour
                 Reset();
             }
         }
+
     }
 
     private void Reset()
@@ -40,9 +41,9 @@ public class GameFlowManager : MonoBehaviour
             Destroy(obstacle);
         }
         this.gameObject.GetComponent<TileSpawner>().enabled = true;
-        player.GetComponent<PlayerControl>().enabled = true;
         player.GetComponentInChildren<PlayerJuice>().FadeIn();
         GetComponent<ScoreKeeper>().Reset();
+        player.GetComponent<PlayerControl>().enabled = true;
         hasEnded = false;
     }
 

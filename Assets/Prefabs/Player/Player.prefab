@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4320515201956354}
   - component: {fileID: 33858213878762806}
   - component: {fileID: 23546286988547942}
+  - component: {fileID: 114869010659226754}
   m_Layer: 0
   m_Name: Graphics
   m_TagString: Untagged
@@ -189,7 +190,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 1
+  m_CollisionDetection: 2
 --- !u!65 &65653368849373688
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -313,6 +314,19 @@ MonoBehaviour:
   BulletPrefab: {fileID: 1266495924230554, guid: eee2891a198deba4db22b98774cd8820,
     type: 2}
   InitialLane: {fileID: 0}
+--- !u!114 &114869010659226754
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1002890382799728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f0e61fc9d10dea46abc08a55e30d804, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DestroyTime: 0.5
+  CreationTime: 1
 --- !u!114 &114892259196564566
 MonoBehaviour:
   m_ObjectHideFlags: 1
