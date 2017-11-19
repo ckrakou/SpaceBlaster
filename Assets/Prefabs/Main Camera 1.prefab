@@ -206,11 +206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 041b144660997304dbde22947096c8d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BackgroundMusicTracks:
-  - {fileID: 8300000, guid: 472f8c647389f874a8245c930fdb5084, type: 3}
-  - {fileID: 8300000, guid: cf34671dbc5b75846b0b2b498143cd82, type: 3}
-  - {fileID: 8300000, guid: 365f8345ada504441be10e32120eed3b, type: 3}
-  - {fileID: 8300000, guid: c23714e818acc8e4db9a387a66c97b61, type: 3}
+  BackgroundMusicTracks: []
 --- !u!124 &124800868828990670
 Behaviour:
   m_ObjectHideFlags: 1
