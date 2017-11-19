@@ -24,6 +24,7 @@ public class PlayerControl : MonoBehaviour
 
     private LaneController currentLane;
     private RoadTurner roadTurner;
+    private PlayerSound soundEffects;
 
     // Use this for initialization
     void Start()
@@ -37,6 +38,7 @@ public class PlayerControl : MonoBehaviour
 
         currentLane = InitialLane;
         roadTurner = InitialLane.transform.root.GetComponent<RoadTurner>();
+        soundEffects = GetComponentInChildren<PlayerSound>();
         MovePlayer();
     }
 
@@ -61,6 +63,7 @@ public class PlayerControl : MonoBehaviour
             }
 
             Instantiate(BulletPrefab, LaserSpawnPoint.position, transform.rotation, currentLane.transform.root);
+            soundEffects.Shoot();
             shotFired = true;
         }
 

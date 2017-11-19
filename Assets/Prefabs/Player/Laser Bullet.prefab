@@ -144,6 +144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Velocity: 30
   TimeAlive: 10
+  DestructionSound: {fileID: 8300000, guid: 84d95f1ece62ddc4e8ea6f0770423673, type: 3}
   Direction: {x: 0, y: 0, z: 1}
 --- !u!136 &136469299286279712
 CapsuleCollider:

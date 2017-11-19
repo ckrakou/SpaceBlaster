@@ -9,7 +9,6 @@ public class Projectile : MonoBehaviour
     public float TimeAlive = 2f;
     public Vector3 Direction = Vector3.right;
 
-
     // Use this for initialization
     void Start()
     {

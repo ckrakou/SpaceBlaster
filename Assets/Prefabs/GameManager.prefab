@@ -115,9 +115,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TilePrefab: {fileID: 1146667737855004, guid: 6065cdcb79fde27409cf7cee23393857, type: 2}
   Road: {fileID: 0}
-  SpawnInterval: 10
-  TileSpeed: 20
-  SpawnPoint: {x: 0, y: 0, z: 150}
+  SpawnInterval: 1.33
+  TileSpeed: 40
+  SpawnPoint: {x: 0, y: 0, z: 200}
   KillPoint: {x: 0, y: 0, z: -15}
 --- !u!114 &114325078792594202
 MonoBehaviour:
@@ -147,8 +147,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Debugging: 0
   TextElement: {fileID: 0}
-  PointsPerPassedSection: 10
-  PointsPerShotFence: 20
+  PointsPerPassedSection: 25
+  PointsPerShotFence: 10
 --- !u!114 &114733565237307248
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -160,6 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45fb7d7a76633994495928e6d7248b61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Debugging: 1
 --- !u!114 &114915723823929242
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -174,8 +175,20 @@ MonoBehaviour:
   DifficultyLevels:
   - Interval: 3
     Speed: 15
-  - Interval: 3
+  - Interval: 2.66
+    Speed: 20
+  - Interval: 2.33
+    Speed: 25
+  - Interval: 2
     Speed: 30
-  - Interval: 3
+  - Interval: 1.66
+    Speed: 35
+  - Interval: 1.33
+    Speed: 40
+  - Interval: 1
     Speed: 45
+  - Interval: 0.66
+    Speed: 50
+  - Interval: 0.33
+    Speed: 55
   PointsThreshold: 100

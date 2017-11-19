@@ -10,7 +10,6 @@ public class Collisions : MonoBehaviour
     private ScoreKeeper scoreKeeper;
     private GameFlowManager gameFlowManager;
 
-
     // Use this for initialization
     void Start()
     {
