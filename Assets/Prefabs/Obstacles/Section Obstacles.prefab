@@ -627,6 +627,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: {x: 0, y: 0, z: -1}
+  Speed: 5
 --- !u!114 &114365827447162652
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -673,7 +674,7 @@ MonoBehaviour:
     type: 2}
   FencePrefab: {fileID: 1348562247243714, guid: 1cb6421fb4fa55d4dbe4a9c57fd756ff,
     type: 2}
-  FilledSpots: 9
+  FilledSpots: 7
   BlockerToFenceRatio: 0.5
 --- !u!114 &114510131767126370
 MonoBehaviour:

@@ -44,6 +44,7 @@ public class GameFlowManager : MonoBehaviour
         this.gameObject.GetComponent<TileSpawner>().enabled = true;
         player.GetComponentInChildren<PlayerJuice>().FadeIn();
         GetComponent<ScoreKeeper>().Reset();
+        GetComponent<DifficultyManager>().ResetDifficulty();
         player.GetComponent<PlayerControl>().enabled = true;
         hasEnded = false;
     }

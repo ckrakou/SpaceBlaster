@@ -7,7 +7,6 @@ public class TileRunner : MonoBehaviour {
 
     public Vector3 Direction;
     public float Speed = 5;
-    public float RotationInterval = 3;
 
     private Vector3 directionNormalized;
     private float nextRotationTimestamp;

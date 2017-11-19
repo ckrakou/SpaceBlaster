@@ -1,23 +1,24 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class DifficultyManager : MonoBehaviour
 {
-
+    public bool Debugging;
     public int PointsThreshold = 150;
 
     [Header("Initial Difficulty")]
-    public float InitialSpawnRate = 2.5f;
+    public float InitialDistanceBetweenObstacles = 30f;
     public float InitialSpeed = 20;
 
+    [Header("Difficulty Caps")]
+    public float DistanceCap = 20f;
+    public float SpeedCap = 70f;
+
     [Header("Difficulty Elements, as Percentages")]
-    [Range(0, 1)]
-    public float SpawnRateIncrease = 0.1f;
-    [Range(0,1)]
-    public float SpeedIncrease = 0.1f;
-    
+    [Range(0, 25)]
+    public int DistanceDecrease = 5;
+    [Range(0, 25)]
+    public int SpeedIncrease = 5;
+
     private TileSpawner spawner;
     private ScoreKeeper score;
     private DifficultyLevel currentDifficulty;
@@ -27,45 +28,64 @@ public class DifficultyManager : MonoBehaviour
     {
         spawner = GetComponent<TileSpawner>();
         score = GetComponent<ScoreKeeper>();
-        currentDifficulty = new DifficultyLevel(InitialSpawnRate, InitialSpeed, 1);
+        ResetDifficulty();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (score.Score > PointsThreshold * currentDifficulty.Difficultylevel)
+        if (score.Score > PointsThreshold * currentDifficulty.Level)
         {
-            IncreaseDifficulty(currentDifficulty.Difficultylevel);
+            IncreaseDifficulty(currentDifficulty.Level + 1);
             SetDifficulty();
         }
     }
 
+    public void ResetDifficulty()
+    {
+
+        currentDifficulty = new DifficultyLevel(InitialDistanceBetweenObstacles, InitialSpeed, 1);
+        SetDifficulty();
+
+
+        if (Debugging)
+        {
+            Debug.Log("DifficultyManager: Resetting difficulty back to " + currentDifficulty.Level + " , Speed = " + currentDifficulty.Speed + " , Distance between blocks = " + currentDifficulty.Distance);
+        }
+
+    }
+
     private void IncreaseDifficulty(int currentLevel)
     {
-        currentDifficulty = new DifficultyLevel(
-            InitialSpawnRate - (currentLevel + 1 * SpawnRateIncrease),
-            InitialSpeed + (currentLevel + 1 * SpeedIncrease),
-            currentLevel + 1);
+        float newDistance = Mathf.Clamp(InitialDistanceBetweenObstacles - ((currentLevel - 1) * ((DistanceDecrease / 100f) * InitialDistanceBetweenObstacles)), DistanceCap, InitialDistanceBetweenObstacles);
+        float newSpeed = Mathf.Clamp(InitialSpeed + (currentLevel - 1) * (SpeedIncrease * InitialSpeed / 100f), InitialSpeed, SpeedCap);
+
+        currentDifficulty = new DifficultyLevel(newDistance, newSpeed, currentLevel);
+
+        if (Debugging)
+        {
+            Debug.Log("DifficultyManager: Increasing difficulty to " + currentDifficulty.Level + " , Speed = " + currentDifficulty.Speed + " , Distance between blocks = " + currentDifficulty.Distance);
+        }
     }
 
     private void SetDifficulty()
     {
-        spawner.SpawnInterval = currentDifficulty.SpawnInterval;
+        spawner.DistanceInterval = currentDifficulty.Distance;
         spawner.TileSpeed = currentDifficulty.Speed;
         spawner.UpdateExistingTiles();
     }
 
     private struct DifficultyLevel
     {
-        public float SpawnInterval;
+        public float Distance;
         public float Speed;
-        public int Difficultylevel;
+        public int Level;
 
-        public DifficultyLevel(float spawnInterval, float speed, int difficultylevel)
+        public DifficultyLevel(float distance, float speed, int level)
         {
-            SpawnInterval = spawnInterval;
+            Distance = distance;
             Speed = speed;
-            Difficultylevel = difficultylevel;
+            Level = level;
         }
     }
 }
