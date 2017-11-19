@@ -48,7 +48,7 @@ public class SectionController : MonoBehaviour {
             }
             else
             {
-                if (UnityEngine.Random.Range(0f, 1f) >= BlockerToFenceRatio)
+                if (UnityEngine.Random.Range(0f, 1f) <= BlockerToFenceRatio)
                 {
                     spawns[index].SpawnBlocker();
                 }

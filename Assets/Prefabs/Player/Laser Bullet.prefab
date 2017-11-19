@@ -89,7 +89,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 4a51c1ca1a675b440b87c137ac1e0617, type: 2}
+  - {fileID: 2100000, guid: 7b14bbdbbb8792c4c91697d50f224668, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -144,7 +144,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Velocity: 30
   TimeAlive: 10
-  DestructionSound: {fileID: 8300000, guid: 84d95f1ece62ddc4e8ea6f0770423673, type: 3}
   Direction: {x: 0, y: 0, z: 1}
 --- !u!136 &136469299286279712
 CapsuleCollider:
@@ -309,7 +308,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.9843137, g: 0, b: 1, a: 1}
+      maxColor: {r: 0, g: 1, b: 0.08965516, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}

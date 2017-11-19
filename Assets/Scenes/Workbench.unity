@@ -394,6 +394,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114470795854729710, guid: 6065cdcb79fde27409cf7cee23393857,
+        type: 2}
+      propertyPath: BlockerToFenceRatio
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6065cdcb79fde27409cf7cee23393857, type: 2}
   m_IsPrefabParent: 0
