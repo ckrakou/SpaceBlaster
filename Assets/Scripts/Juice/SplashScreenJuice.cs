@@ -27,8 +27,4 @@ public class SplashScreenJuice : MonoBehaviour {
         splashScreen.DOFade(0, FadeTime);
     }
 
-    private void Pulsate()
-    {
-    }
-
 }
