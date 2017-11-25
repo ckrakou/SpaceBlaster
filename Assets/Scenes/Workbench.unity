@@ -260,6 +260,11 @@ Prefab:
       propertyPath: Debugging
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114406743107774830, guid: 69e12bf0db057364e8424e4a66c3db26,
+        type: 2}
+      propertyPath: MovementSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 2a5b3242525decf46a9f577ffc7caa54, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 69e12bf0db057364e8424e4a66c3db26, type: 2}
   m_IsPrefabParent: 0
