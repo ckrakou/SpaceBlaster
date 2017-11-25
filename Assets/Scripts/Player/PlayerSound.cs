@@ -7,6 +7,7 @@ public class PlayerSound : MonoBehaviour {
 
     public AudioClip ShootSound;
     public AudioClip DeathSound;
+    public AudioClip MovementSound;
 
     private AudioSource source;
 	// Use this for initialization

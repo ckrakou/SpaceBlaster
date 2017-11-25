@@ -100,6 +100,7 @@ public class PlayerControl : MonoBehaviour
             default:
                 break;
         }
+
     }
 
     private void DetermineNextPosition()

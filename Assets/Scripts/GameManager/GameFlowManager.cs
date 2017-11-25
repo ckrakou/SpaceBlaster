@@ -10,6 +10,7 @@ public class GameFlowManager : MonoBehaviour
     public float MaxWaitTime = 5f;
 
     private GameObject player;
+    private DataCollector collector;
     private float restartTimestamp;
 
     private GameState currentState;
@@ -18,6 +19,7 @@ public class GameFlowManager : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player");
+        collector = GetComponentInChildren<DataCollector>();
         UpdateState(GameState.SPLASH);
     }
 
@@ -105,7 +107,7 @@ public class GameFlowManager : MonoBehaviour
     private void Reset()
     {
         GameObject.Find("SplashScreen").GetComponent<SplashScreenJuice>().FadeOut();
-
+        collector.Begin();
         foreach (var obstacle in GameObject.FindGameObjectsWithTag("Section"))
         {
             Destroy(obstacle);
@@ -120,6 +122,7 @@ public class GameFlowManager : MonoBehaviour
 
     public void EndGame()
     {
+        collector.End();
         UpdateState(GameState.DIED);
     }
 
