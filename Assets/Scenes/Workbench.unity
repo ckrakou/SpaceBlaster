@@ -268,6 +268,31 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 69e12bf0db057364e8424e4a66c3db26, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &646622750 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1439290318922432, guid: e39c9bcf2f5ab784998d4e3efda2bd30,
+    type: 2}
+  m_PrefabInternal: {fileID: 857293739}
+--- !u!223 &646622751
+Canvas:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 646622750}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1001 &651995915
 Prefab:
   m_ObjectHideFlags: 0
@@ -525,6 +550,21 @@ Prefab:
         type: 2}
       propertyPath: m_SizeDelta.x
       value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114433358401342434, guid: e39c9bcf2f5ab784998d4e3efda2bd30,
+        type: 2}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114433358401342434, guid: e39c9bcf2f5ab784998d4e3efda2bd30,
+        type: 2}
+      propertyPath: m_ReferenceResolution.x
+      value: 1280
+      objectReference: {fileID: 0}
+    - target: {fileID: 114433358401342434, guid: e39c9bcf2f5ab784998d4e3efda2bd30,
+        type: 2}
+      propertyPath: m_ReferenceResolution.y
+      value: 1024
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e39c9bcf2f5ab784998d4e3efda2bd30, type: 2}
