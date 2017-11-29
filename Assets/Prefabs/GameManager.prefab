@@ -179,7 +179,7 @@ MonoBehaviour:
   Debugging: 0
   TextElement: {fileID: 0}
   PointsPerPassedSection: 25
-  PointsPerShotFence: 10
+  PointsPerShotFence: 25
 --- !u!114 &114733565237307248
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -114,6 +114,8 @@ public class GameFlowManager : MonoBehaviour
         }
 
         this.gameObject.GetComponent<TileSpawner>().enabled = true;
+
+        player.GetComponent<BoxCollider>().enabled = true;
         player.GetComponentInChildren<PlayerJuice>().FadeIn();
         GetComponent<ScoreKeeper>().Reset();
         GetComponent<DifficultyManager>().ResetDifficulty();
@@ -128,13 +130,7 @@ public class GameFlowManager : MonoBehaviour
 
     private void TearDown()
     {
-
-        foreach (var obstacle in GameObject.FindGameObjectsWithTag("Section"))
-        {
-            obstacle.GetComponent<TileRunner>().Speed = 0;
-        }
-
-        this.gameObject.GetComponent<TileSpawner>().enabled = false;
+        player.GetComponent<BoxCollider>().enabled = false;
         player.GetComponent<PlayerControl>().enabled = false;
 
         player.GetComponentInChildren<PlayerSound>().Explode();
