@@ -208,7 +208,7 @@ MonoBehaviour:
   Debugging: 0
   scoreKeeper: {fileID: 114511399122005954}
   FileName: DataCollected.csv
-  Directory: Assets/Resources
+  SubDirectory: Data
   Delimiter: ;
 --- !u!114 &114915723823929242
 MonoBehaviour:
@@ -228,4 +228,4 @@ MonoBehaviour:
   DistanceCap: 40
   SpeedCap: 70
   DistanceDecrease: 5
-  SpeedIncrease: 15
+  SpeedIncrease: 5

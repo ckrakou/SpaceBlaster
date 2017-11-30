@@ -9,10 +9,9 @@ public class DataCollector : MonoBehaviour {
     public bool Debugging = true;
     public ScoreKeeper scoreKeeper;
     public string FileName = "DataCollected.csv";
-    public string Directory = "Assets/Resources";
     public string Delimiter = ";";
 
-    private string fullPath; 
+    private string fullPath;
 
     private DateTime timeStampStart;
     private DateTime timeStampEnd;
@@ -22,9 +21,57 @@ public class DataCollector : MonoBehaviour {
     private int movesMade;
     private int segmentsCleared;
 
-	public void Begin()
+    private void Start()
     {
-        fullPath = Directory + "/" + FileName;
+        fullPath = Directory.GetCurrentDirectory() + "/" + FileName;
+        if (Debugging)
+        {
+            Debug.Log("Datacollector: Saving at " + fullPath);
+        }
+        CheckFile();
+    }
+
+    private void CheckFile()
+    {
+        try
+        {
+            if (File.Exists(fullPath))
+            {
+                File.OpenWrite(fullPath).Close();
+            }
+            else
+            {
+                File.Create(fullPath).Close();
+
+                StreamWriter writer = new StreamWriter(fullPath, true);
+                writer.WriteLine(ConstructHeader());
+                writer.Close();
+            }
+        }
+        catch (FileNotFoundException)
+        {
+            if (Debugging)
+            {
+                Debug.Log("DataCollector: File not found, Would create at :" + fullPath);
+            }
+            else
+            {
+                File.Create(fullPath).Close();
+
+                StreamWriter writer = new StreamWriter(fullPath, true);
+                writer.WriteLine(ConstructHeader());
+                writer.Close();
+            }
+        }
+    }
+
+    private string ConstructHeader()
+    {
+        return "StartTimestamp" + Delimiter + "EndTimestamp" + Delimiter + "Score" + Delimiter + "Duration" + Delimiter + "Shots" + Delimiter + "Moves" + Delimiter + "Segments";
+    }
+
+    public void Begin()
+    {
         timeStampStart = DateTime.Now;
         shotsFired = 0;
         movesMade = 0;
@@ -38,7 +85,7 @@ public class DataCollector : MonoBehaviour {
         duration = Mathf.RoundToInt((float)(timeStampEnd - timeStampStart).TotalSeconds);
         if (Debugging)
         {
-            Debug.Log("DataCollector: " + FormatData());
+            Debug.Log("DataCollector: Data written = " + FormatData());
         }
         else
         {
