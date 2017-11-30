@@ -18,11 +18,17 @@ public class DataCollector : MonoBehaviour {
     private DateTime timeStampEnd;
     private int score;
     private double duration;
+    private int shotsFired;
+    private int movesMade;
+    private int segmentsCleared;
 
 	public void Begin()
     {
         fullPath = Directory + "/" + FileName;
         timeStampStart = DateTime.Now;
+        shotsFired = 0;
+        movesMade = 0;
+        segmentsCleared = 0;
     }
 
     public void End()
@@ -32,12 +38,27 @@ public class DataCollector : MonoBehaviour {
         duration = Mathf.RoundToInt((float)(timeStampEnd - timeStampStart).TotalSeconds);
         if (Debugging)
         {
-            Debug.Log("DataCollector: "+FormatData());
+            Debug.Log("DataCollector: " + FormatData());
         }
         else
         {
             AppendToFile();
         }
+    }
+
+    public void ShotFired()
+    {
+        shotsFired++;
+    }
+
+    public void ShipMoved()
+    {
+        movesMade++;
+    }
+
+    public void SegmentCleared()
+    {
+        segmentsCleared++;
     }
 
     private void AppendToFile()
@@ -49,6 +70,6 @@ public class DataCollector : MonoBehaviour {
 
     private string FormatData()
     {
-        return timeStampStart.ToLocalTime() + Delimiter + timeStampEnd.ToLocalTime() + Delimiter + score + Delimiter + duration;
-    }
+        return timeStampStart.ToLocalTime() + Delimiter + timeStampEnd.ToLocalTime() + Delimiter + score + Delimiter + duration + Delimiter + shotsFired + Delimiter + movesMade + Delimiter + segmentsCleared;
+    }  
 }

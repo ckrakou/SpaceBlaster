@@ -265,6 +265,11 @@ Prefab:
       propertyPath: MovementSound
       value: 
       objectReference: {fileID: 8300000, guid: 2a5b3242525decf46a9f577ffc7caa54, type: 3}
+    - target: {fileID: 114641669468772946, guid: 69e12bf0db057364e8424e4a66c3db26,
+        type: 2}
+      propertyPath: dataCollector
+      value: 
+      objectReference: {fileID: 832291458}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 69e12bf0db057364e8424e4a66c3db26, type: 2}
   m_IsPrefabParent: 0
@@ -479,19 +484,25 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 114028120792984434, guid: 92a881ab4d9409f49aa14001cee149a3,
-        type: 2}
-      propertyPath: Road
-      value: 
-      objectReference: {fileID: 2087525243}
     - target: {fileID: 114511399122005954, guid: 92a881ab4d9409f49aa14001cee149a3,
         type: 2}
       propertyPath: TextElement
       value: 
       objectReference: {fileID: 150361436}
+    - target: {fileID: 114028120792984434, guid: 92a881ab4d9409f49aa14001cee149a3,
+        type: 2}
+      propertyPath: Road
+      value: 
+      objectReference: {fileID: 2087525243}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 92a881ab4d9409f49aa14001cee149a3, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &832291458 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114913334852561224, guid: 92a881ab4d9409f49aa14001cee149a3,
+    type: 2}
+  m_PrefabInternal: {fileID: 832291457}
+  m_Script: {fileID: 11500000, guid: c01d1c27d1d8ad147a8b8fc4133ef3ba, type: 3}
 --- !u!1001 &857293739
 Prefab:
   m_ObjectHideFlags: 0

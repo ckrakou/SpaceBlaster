@@ -12,6 +12,7 @@ public class PlayerControl : MonoBehaviour
     public string ShootButton = "fire1";
     public string MoveAxis = "Horizontal";
     [Header("Scene Settings")]
+    public DataCollector dataCollector;
     public Transform LaserSpawnPoint;
     public GameObject BulletPrefab;
     public LaneController InitialLane;
@@ -64,6 +65,7 @@ public class PlayerControl : MonoBehaviour
 
             Instantiate(BulletPrefab, LaserSpawnPoint.position, transform.rotation, currentLane.transform.root);
             soundEffects.Shoot();
+            dataCollector.ShotFired();
             shotFired = true;
         }
 
@@ -92,9 +94,11 @@ public class PlayerControl : MonoBehaviour
         {
             case Move.Left:
                 roadTurner.TurnRight();
+                dataCollector.ShipMoved();
                 break;
             case Move.Right:
                 roadTurner.TurnLeft();
+                dataCollector.ShipMoved();
                 break;
             case Move.Center:
             default:

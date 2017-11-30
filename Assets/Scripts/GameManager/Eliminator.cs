@@ -6,6 +6,7 @@ using UnityEngine;
 public class Eliminator : MonoBehaviour {
 
     public string[] TagsToDestroy;
+    public DataCollector dataCollector;
 
 	// Use this for initialization
 	void Start () {
@@ -22,6 +23,10 @@ public class Eliminator : MonoBehaviour {
         if (TagsToDestroy.Contains(other.tag))
         {
             Destroy(other.gameObject);
+            if (other.tag.Equals("Section"))
+            {
+                dataCollector.SegmentCleared();
+            }
         }
     }
 }
