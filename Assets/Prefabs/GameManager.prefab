@@ -224,7 +224,7 @@ MonoBehaviour:
   Debugging: 0
   PointsThreshold: 250
   InitialDistanceBetweenObstacles: 50
-  InitialSpeed: 20
+  InitialSpeed: 40
   DistanceCap: 40
   SpeedCap: 70
   DistanceDecrease: 5
