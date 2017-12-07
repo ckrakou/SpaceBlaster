@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameFlowManager : MonoBehaviour
 {
     public bool Debugging;
-    public float MaxWaitTime = 5f;
+    public float DeathToSplashTime = 0.5f;
 
     private GameObject player;
     private DataCollector collector;
@@ -78,16 +78,7 @@ public class GameFlowManager : MonoBehaviour
                 }
                 break;
             case GameState.WAITING:
-                if (Time.time > restartTimestamp && Input.GetAxis("Shoot") > 0)
-                {
-                    if (Debugging)
-                    {
-                        Debug.Log("GameFlowManager: Restarting Game");
-                    }
-                    UpdateState(GameState.PLAYING);
-                }
-
-                else if (Time.time > restartTimestamp + MaxWaitTime)
+                if (Time.time > restartTimestamp + DeathToSplashTime)
                 {
                     if (Debugging)
                     {
@@ -95,6 +86,7 @@ public class GameFlowManager : MonoBehaviour
                     }
                     UpdateState(GameState.SPLASH);
                 }
+                
                 break;
             case GameState.DIED:
             case GameState.PLAYING:
